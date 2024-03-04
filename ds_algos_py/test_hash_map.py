@@ -18,7 +18,11 @@ if __name__ == "__main__":
     print(hash_map.get("anelO"))
     print(type(hash_map.get("Olena")))
 
+    hash_map.put("Govanni"[::-1], "_")
+    hash_map.put("Govanni"[::-1], "Hostile hacker")
     hash_map.put("Govanni", "Soldier of Special Forces")
     hash_map.put("Govanni", "Drone master")
+    hash_map.put("Govanni", "Pilot")
+    hash_map.put("Govanni", "The liaison officer")
 
     print(hash_map)

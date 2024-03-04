@@ -31,13 +31,14 @@ class MyHashMap:
         if self.internal_array[index] is not None:
 
             if isinstance(self.internal_array[index], MyLinkedList):
-                existed_list = self.internal_array[index]
+                existed_list: MyLinkedList = self.internal_array[index]
 
                 # todo: we need to iterate over LinkedList to see if the tuple with
                 #  the key already exists to substitute the value
                 for existing in existed_list:
                     if existing[0] == key_value_added[0]:
-                        existing = key_value_added
+                        existed_list.replace_all_values([x for x in existed_list if x[0] != key_value_added[0]])
+                        existed_list.add_at_tail(key_value_added)
                         return
 
                 existed_list.append(key_value_added)

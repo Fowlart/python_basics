@@ -10,10 +10,12 @@ class MyLinkedList:
         self.head = None
         self.current_iter_node = None
 
+    # for iteration operator support: should return start of iteration
     def __iter__(self):
         self.current_iter_node = self.head
         return self
 
+    # for iteration operator support: should return next value each time
     def __next__(self):
         if self.current_iter_node:
             val = self.current_iter_node.val
@@ -22,11 +24,27 @@ class MyLinkedList:
         else:
             raise StopIteration()
 
-    def get_next(self):
-        if self.head is not None:
-            return self.head.val
-        else:
-            raise StopIteration
+    # for implementing membership test to overwrite `in` operator :
+    def __contains__(self, value):
+        print("called self.__contains__ in MyLinkedList")
+        result: bool = False
+
+        for node_value in self:
+            if node_value == value:
+                result = True
+                break
+
+        return result
+
+    def index_of(self, val):
+        current = self.head
+        index = 0
+        while current is not None:
+            if current.val == val:
+                return index
+            current = current.next_node
+            index += 1
+        return -1
 
     def append(self, some) -> None:
         if self.head is None:
@@ -101,4 +119,4 @@ class MyLinkedList:
             res.append(current.val)
             current = current.next_node
 
-        return '==>'.join(str(i) for i in res)
+        return '|=>'.join(str(i) for i in res)

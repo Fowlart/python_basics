@@ -30,3 +30,4 @@ if __name__ == "__main__":
     for i in linked_list:
         print(i)
 
+    print("three" in linked_list)
