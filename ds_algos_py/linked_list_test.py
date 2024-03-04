@@ -26,3 +26,7 @@ if __name__ == "__main__":
     print(linked_list)
     print(f"Length of linked_list: {linked_list.length()}")
 
+    # iterable test
+    for i in linked_list:
+        print(i)
+

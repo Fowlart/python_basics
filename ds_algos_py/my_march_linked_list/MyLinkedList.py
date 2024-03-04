@@ -7,13 +7,26 @@ class ListNode:
 class MyLinkedList:
 
     def __init__(self):
-        self.head: ListNode = None
+        self.head = None
+        self.current_iter_node = None
+
+    def __iter__(self):
+        self.current_iter_node = self.head
+        return self
+
+    def __next__(self):
+        if self.current_iter_node:
+            val = self.current_iter_node.val
+            self.current_iter_node = self.current_iter_node.next_node
+            return val
+        else:
+            raise StopIteration()
 
     def get_next(self):
         if self.head is not None:
             return self.head.val
         else:
-            return None
+            raise StopIteration
 
     def append(self, some) -> None:
         if self.head is None:
@@ -88,4 +101,4 @@ class MyLinkedList:
             res.append(current.val)
             current = current.next_node
 
-        return '=>'.join(str(i) for i in res)
+        return '==>'.join(str(i) for i in res)

@@ -12,9 +12,13 @@ if __name__ == "__main__":
 
     # put the value to create collision
     hash_map.put("anelO", "Driver")
-
-    print(hash_map)
+    hash_map.put("Olena", "Prosecutor")
 
     print(hash_map.get("Olena"))
     print(hash_map.get("anelO"))
     print(type(hash_map.get("Olena")))
+
+    hash_map.put("Govanni", "Soldier of Special Forces")
+    hash_map.put("Govanni", "Drone master")
+
+    print(hash_map)
