@@ -1,5 +1,4 @@
 from ds_algos_py.hash_table.MyHashMap import MyHashMap
-from ds_algos_py.hash_table.hash_function import get_hash_int
 
 if __name__ == "__main__":
     hash_map = MyHashMap()
@@ -26,3 +25,6 @@ if __name__ == "__main__":
     hash_map.put("Govanni", "The liaison officer")
 
     print(hash_map)
+
+    print(hash_map.get("Govanni"))
+    print(hash_map.get("Govanni"[::-1]))
