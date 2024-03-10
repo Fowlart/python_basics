@@ -6,10 +6,10 @@ class MyQueue:
         self.items = MyLinkedList()
 
     # https://www.programiz.com/java-programming/queue
-    def add(self, value):
+    def enqueue(self, value):
         self.items.add_at_head(value)
 
-    def element(self):
+    def dequeue(self):
         # get in index must be implemented
         current_node: ListNode = self.items.head
         while current_node:
