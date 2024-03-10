@@ -87,7 +87,7 @@ class MyLinkedList:
     def delete_at_index(self, index: int) -> None:
         the_range = range(index)
         if index == 0:
-            self.head = self.head.next_node
+            self.head = None
         else:
             current = self.head
             for i in the_range:
@@ -119,4 +119,7 @@ class MyLinkedList:
             res.append(current.val)
             current = current.next_node
 
-        return '|=>'.join(str(i) for i in res)
+        if len(res) == 0:
+            return "[]"
+        else:
+            return '|=>'.join(str(i) for i in res)

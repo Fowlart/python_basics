@@ -31,3 +31,8 @@ if __name__ == "__main__":
         print(i)
 
     print("three" in linked_list)
+
+    # delete head %)
+    print(linked_list)
+    linked_list.delete_at_index(0)
+    print(linked_list)

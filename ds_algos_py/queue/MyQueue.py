@@ -1,4 +1,4 @@
-from ds_algos_py.my_march_linked_list.MyLinkedList import MyLinkedList
+from ds_algos_py.my_march_linked_list.MyLinkedList import MyLinkedList, ListNode
 
 
 class MyQueue:
@@ -11,5 +11,17 @@ class MyQueue:
 
     def element(self):
         # get in index must be implemented
-        return self.items
+        current_node: ListNode = self.items.head
+        while current_node:
+            if not current_node.next_node:
+                break
+            else:
+                current_node = current_node.next_node
 
+        value = current_node.val
+        # delete element from MyLinkedList
+        self.items.delete_at_index(self.items.length()-1)
+        return value
+
+    def __str__(self):
+        return self.items.__str__()
