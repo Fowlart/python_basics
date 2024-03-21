@@ -11,7 +11,7 @@ def create_array_of_fixed_size(n: int) -> list:
     return [None] * n
 
 
-def get_dictionary() -> dict[int, str]:
+def get_dictionary() -> dict:
     return {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
 
 
