@@ -2,7 +2,7 @@ import json
 
 arm_template: json
 
-pathToFile = r"C:\Users\Artur.Semikov\Documents\adf_dev\ARMTemplateForFactory.json"
+pathToFile = r"C:\Users\Artur.Semikov\PycharmProjects\Harmony\harmony-datafactory-dev-01-kcts\ARMTemplateForFactory.json"
 env  = "DEV"
 #env  = "QA"
 
