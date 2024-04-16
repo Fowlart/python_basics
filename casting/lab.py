@@ -1,0 +1,6 @@
+the_bool = bool("True")
+print(the_bool)
+print(type(the_bool))
+the_bool = bool(False)
+print(the_bool)
+print(type(the_bool))
