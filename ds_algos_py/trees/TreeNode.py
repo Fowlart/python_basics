@@ -1,4 +1,13 @@
 from collections.abc import MutableSequence
+from dataclasses import dataclass
+
+@dataclass
+class Skill:
+    skill_name: str
+    level: int
+
+    def __str__(self):
+        return f"{self.skill_name} [{self.level}]"
 
 class TreeNode:
 
@@ -22,8 +31,8 @@ class TreeNode:
 
     def print_tree(self):
         spaces = self.get_level()*3*" "
-        preffix = spaces+"|__"  if self.parent else ""
-        print(preffix+self.data)
+        msg: str = spaces+str(self.data) if self.parent else f"==={str(self.data)}==="
+        print(msg)
         if self.children:
             for x in self.children:
                 x.print_tree()
@@ -32,14 +41,14 @@ class TreeNode:
 
 if __name__ == "__main__":
     skills = TreeNode("Skills")
-    de = TreeNode("Data Engineer")
-    survival = TreeNode("Survival")
-    python = TreeNode("Python")
-    azure = TreeNode("Azure")
-    databricks = TreeNode("Databricks")
-    box = TreeNode("Boxing")
-    jump_row = TreeNode("Jump Row")
-    shotgun = TreeNode("Shotgun")
+    de = TreeNode(Skill("Data Engineer", 6))
+    survival = TreeNode(Skill("Survival", 3))
+    python = TreeNode(Skill("Python", 3))
+    azure = TreeNode(Skill("Azure", 5))
+    databricks = TreeNode(Skill("Databricks", 7))
+    box = TreeNode(Skill("Boxing", 2))
+    jump_row = TreeNode(Skill("Jump Row", 4))
+    shotgun = TreeNode(Skill("Shotgun", 1))
     jump_row_ex = TreeNode("3 hrs weekly")
     boxing_ex = TreeNode("3 hrs weekly")
 

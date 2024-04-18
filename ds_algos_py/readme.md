@@ -2,3 +2,4 @@
 - Linked list (single directed)
 - Hash table
 - Queue
+- General tree
