@@ -10,7 +10,7 @@ with open(path_to_file, 'r') as file:
 default_value = {}
 ch_1_internal = {}
 ch_1 = {}
-ch_1.setdefault("ch_1", ch_1_internal)
+ch_1.setdefault("input.txt", ch_1_internal)
 ch_1_internal.setdefault("type","object")
 ch_1_internal.setdefault("default_value",default_value)
 

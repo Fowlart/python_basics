@@ -9,6 +9,10 @@ converted_date: datetime = datetime.strptime(date_of_law_start, '%d-%m-%Y')
 
 end_day = converted_date+timedelta(days=days_to_spent)
 
-notify2.init('app name')
-n = notify2.Notification('ATTENTION:', f"You have {end_day - datetime.utcnow()} left")
+notify2.init('days counter')
+msg_summary = 'ATTENTION:'
+msg_body = f"You have {end_day - datetime.utcnow()} left"
+n = notify2.Notification(msg_summary,msg_body)
 n.show()
+print(msg_summary)
+print(msg_body)
