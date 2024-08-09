@@ -1,3 +1,8 @@
+def options(**opts):
+    for k in opts:
+        print(f" {k} |  {opts[k]}")
+
+
 def some_function():
     print("This is an example function!")
 
@@ -13,14 +18,16 @@ def some_function_with_params(first: str, second: int, third: float) -> str:
 def an_empty_function():
     pass
 
+# v = some_function()
+# v2: str = some_function_with_return()
+# print(type(v))
+# print(v)
+# print(v2)
+# print(some_function_with_params(first="some string", second=3, third=55.5))
+# print(an_empty_function())
+# print(an_empty_function())
 
-v = some_function()
 
-v2: str = some_function_with_return()
+dictionary = {"one": 1, "two": 2, "three": 3}
 
-print(type(v))
-print(v)
-print(v2)
-print(some_function_with_params(first="some string", second=3, third=55.5))
-print(an_empty_function())
-print(an_empty_function())
+options(opts=dictionary)
