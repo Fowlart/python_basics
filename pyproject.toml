@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "fowlart-py-toolbox"
+version = "0.0.1-alpha"
+dependencies = [
+  "numpy==1.26.4",
+  "notify2~=0.3.1",
+  "build"
+]
+[project.scripts]
+fowltool-show-time-left = "time_from:show_days"
+fowltool-echo = "consol_parser:read_input"
+[tool.setuptools.packages]
+find = {}  # Scan the project directory with the default parameters
