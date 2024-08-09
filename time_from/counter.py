@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-import notify2
 
 
 def show_days():
@@ -12,18 +11,13 @@ def show_days():
 
     end_day = converted_date+timedelta(days=days_to_spent)
 
-    print(f"end day: {end_day}")
-
-    notify2.init('days counter')
-
     msg_summary = 'ATTENTION:'
 
     msg_body = f"You have {end_day - datetime.utcnow()} left"
 
-    n = notify2.Notification(msg_summary,msg_body)
-
-    n.show()
-
     print(msg_summary)
 
     print(msg_body)
+
+if __name__ == "__main__":
+    show_days()
