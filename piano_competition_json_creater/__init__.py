@@ -1,0 +1,1 @@
+from .create_json import read_internal_input

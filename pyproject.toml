@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 61.0","build"]
+requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "fowlart-py-toolbox"
@@ -10,8 +10,11 @@ dependencies = [
 [project.scripts]
 fowltool-show-time-left = "time_from:show_days"
 fowltool-echo = "consol_parser:read_input"
+fowltool-read-pianists = "piano_competition_json_creater:read_internal_input"
+[tool.setuptools.package-data]
+"*" = ["*.txt"]
 [tool.setuptools.packages.find]
 namespaces = false
 where = ["."]
-include = ["*"]
+include = ["*","*.txt"]
 exclude = ["dist","fowlart_py_toolbox.egg-info","venv"]
