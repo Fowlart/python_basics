@@ -1,0 +1,1 @@
+from ds_algos_py import hash_table as ht
