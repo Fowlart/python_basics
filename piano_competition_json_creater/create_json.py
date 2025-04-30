@@ -3,6 +3,8 @@ import os
 from os import path
 import time
 
+from anyio import sleep
+
 
 def read_internal_input():
     print(f"Current working directory: {os.getcwd()}")
@@ -20,10 +22,12 @@ def read_internal_input():
     with open(f"{executable_dir}/pianists_input.txt", "r", encoding="utf-8") as file:
         for line in file.read().splitlines():
 
+            time.sleep(0.01)
+
             if brake_counter == 0:
                 json_obj = {"videoUrl": "", "composition": "", "name": str(line), "id": {
                     "$oid": f"{time.time()}"
-                }, "group": 'Номінація "Фортепіано соло"'}
+                }, "group": 'Номінація «Концертмейстер»'}
 
                 brake_counter += 1
                 continue
@@ -46,8 +50,8 @@ def read_internal_input():
     for e in jsons_array:
         print(e)
 
-    # with open('output.txt', 'w', encoding='utf8') as json_file:
-    #    j.dump(jsons_array, json_file, ensure_ascii=False, indent=3)
+    with open('output.txt', 'w', encoding='utf8') as json_file:
+        j.dump(jsons_array, json_file, ensure_ascii=False, indent=3)
 
 
 if __name__ == "__main__":
